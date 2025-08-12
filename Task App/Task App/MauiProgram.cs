@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Task_App.ViewModels;
 
 namespace Task_App
 {
@@ -15,8 +16,10 @@ namespace Task_App
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            // Register ViewModels
+            builder.Services.AddTransient<MainViewModel>();
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -10,7 +10,7 @@ namespace Task_App.ViewModels
         public ICommand TaskCommand { get; }
 
         [ObservableProperty]
-        ObservableCollection<string> task = new();
+        ObservableCollection<string> tasks = new();
 
         public MainViewModel()
         {
@@ -19,7 +19,7 @@ namespace Task_App.ViewModels
 
         public void TaskAdded() 
         {
-            Task.Add("Task Added");
+            Tasks.Add("Task Added");
         }
     }
 }
