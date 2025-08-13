@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Task_App.Models;
 
 namespace Task_App.ViewModels
 {
@@ -10,7 +11,7 @@ namespace Task_App.ViewModels
         public ICommand TaskCommand { get; }
 
         [ObservableProperty]
-        ObservableCollection<string> tasks = new();
+        ObservableCollection<TaskItem> tasks = new();
 
         public MainViewModel()
         {
@@ -19,7 +20,7 @@ namespace Task_App.ViewModels
 
         public void TaskAdded() 
         {
-            Tasks.Add("Task Added");
+            Tasks.Add(new TaskItem() { Title = "Task" , Description = "This is a task", Id = 1});
         }
     }
 }
